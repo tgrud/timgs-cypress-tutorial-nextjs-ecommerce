@@ -38,3 +38,15 @@ Cypress.Commands.add('getBySel', (selector, ...args) => {
 //     }
 //   }
 // }
+
+// declare global {
+// https://stackoverflow.com/questions/69927966/argument-type-string-is-not-assignable-to-parameter-type-keyof-chainable-in-c#answer-70338800
+// put below what they put in index.d.ts
+declare namespace Cypress {
+  interface Chainable {
+    // https://docs.cypress.io/guides/tooling/typescript-support#Types-for-Custom-Commands
+    // interface that they use for dataCy
+    getBySel(selector: string): Chainable<JQuery<HTMLElement>>;
+  }
+}
+// }
