@@ -18,8 +18,13 @@ export async function Carousel() {
           <li
             key={`${product.handle}${i}`}
             className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3"
+            // data-test="product-tag"
           >
-            <Link href={`/product/${product.handle}`} className="relative h-full w-full">
+            <Link
+              href={`/product/${product.handle}`}
+              className="relative h-full w-full"
+              // data-test="product-name"
+            >
               <GridTileImage
                 alt={product.title}
                 label={{
@@ -30,6 +35,7 @@ export async function Carousel() {
                 src={product.featuredImage?.url}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                // data-test="product-price"
               />
             </Link>
           </li>
