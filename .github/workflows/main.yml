@@ -5,6 +5,8 @@ on: [push]
 jobs:
   install:
     runs-on: ubuntu-latest
+    env:
+      ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
